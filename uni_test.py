@@ -1,7 +1,8 @@
 from heapq import merge
 from tabnanny import check
 import unittest
-from main import *
+import importlib
+csv_combiner = importlib.import_module("csv-combiner")
 import pandas as pd
 import csv
 
@@ -39,17 +40,17 @@ import csv
 class Test_CSV_Merge(unittest.TestCase):
 
     def test_empty(self):
-        actual = check_csv("fixtures/empty.csv")
+        actual = csv_combiner.check_csv("fixtures/empty.csv")
         expected = False
         self.assertEqual(actual, expected)
 
     def test_no_args(self):
-        actual = check_csv("")
+        actual = csv_combiner.check_csv("")
         expected = False
         self.assertEqual(actual, expected)
     
     def test_file_does_not_exist(self):
-        actual = check_csv("neverExisted.csv")
+        actual = csv_combiner.check_csv("neverExisted.csv")
         expected = False
         self.assertEqual(actual, expected)
     
