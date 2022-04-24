@@ -18,6 +18,10 @@ Run my code as followed:
 ```
 $ ./csv-combiner.py ./fixtures/accessories.csv ./fixtures/clothing.csv > combined.csv
 ```
+For testing:
+```
+$ ./uni_test.py
+```
 
 ## Example Output of Solution
 
